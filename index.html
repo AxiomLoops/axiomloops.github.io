@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxiomLoops — Building Software with Real Impact</title>
+    <meta name="description" content="AxiomLoops builds software that solves real problems through quick iterative feedback loops. Currently developing KahawaPay — digital tools for coffee cooperatives in Kenya.">
+    <meta property="og:title" content="AxiomLoops — Building Software with Real Impact">
+    <meta property="og:description" content="We build software that solves real problems through quick iterative feedback loops.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --navy: #1A1A2E;
+            --navy-light: #22223A;
+            --blue: #3B82C4;
+            --teal: #2DD4BF;
+            --white: #F0F0F5;
+            --gray: #9CA3AF;
+            --accent-gradient: linear-gradient(135deg, #4A6FA5, #2DD4BF);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 2rem;
+            border-radius: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* Products Section */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--teal);
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: border-color 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: rgba(45, 212, 191, 0.2);
+        }
+
+        .product-card .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .badge-active {
+            background: rgba(45, 212, 191, 0.15);
+            color: var(--teal);
+        }
+
+        .product-card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-card p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .product-card a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .product-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        .about-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--gray);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            max-width: 900px;
+            margin: 4rem auto 0;
+        }
+
+        .footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        .contact-line {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <img src="logo.png" alt="AxiomLoops" class="logo">
+    <h1>Axiom<span>Loops</span></h1>
+    <p class="tagline">Building software with real impact through quick iterative feedback loops.</p>
+</section>
+
+<section class="section">
+    <p class="section-title">What we're building</p>
+    
+    <div class="product-card">
+        <span class="badge badge-active">Active</span>
+        <h3>☕ KahawaPay</h3>
+        <p>Digital tools for coffee cooperatives in Kenya. We help cooperatives move from paper-based records to transparent, efficient management — delivery tracking via WhatsApp, automated M-Pesa payments, SMS confirmations, and compliance-ready reporting.</p>
+        <a href="https://axiomloops.github.io/kahawapay-landing/" target="_blank">Learn more →</a>
+    </div>
+</section>
+
+<section class="section">
+    <p class="section-title">How we work</p>
+    
+    <div class="about-grid">
+        <div class="about-item">
+            <h4>🔄 Iterative by Design</h4>
+            <p>We build in tight loops — validate fast, ship fast, learn fast. No 18-month roadmaps. Real feedback from real users, every week.</p>
+        </div>
+        <div class="about-item">
+            <h4>🎯 Real Problems First</h4>
+            <p>We start with the problem, not the technology. Every product begins with conversations on the ground — understanding what people actually need.</p>
+        </div>
+        <div class="about-item">
+            <h4>🤖 AI-Augmented</h4>
+            <p>A small team amplified by AI. We use autonomous agents to move at the speed of a much larger company while staying lean and focused.</p>
+        </div>
+        <div class="about-item">
+            <h4>🌍 Emerging Markets</h4>
+            <p>We build for markets where technology can create the most impact — starting with agricultural cooperatives in East Africa.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>AxiomLoops &middot; Amsterdam, NL</p>
+    <p class="contact-line"><a href="mailto:dorus@axiomloops.com">dorus@axiomloops.com</a></p>
+    <p class="contact-line">&copy; 2026 AxiomLoops</p>
+</footer>
+
+</body>
+</html>
